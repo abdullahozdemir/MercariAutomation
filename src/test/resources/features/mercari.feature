@@ -5,5 +5,4 @@ Feature: Visit Mercari web page
     When click search bar
     And type shoes and select ascending sort
     And Select the first and cheapest product
-    And Get the product price
-    Then Compare the price
+    Then Get the product price and verify it

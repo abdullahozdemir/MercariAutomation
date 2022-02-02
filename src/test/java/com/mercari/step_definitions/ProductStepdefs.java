@@ -22,7 +22,7 @@ public class ProductStepdefs {
 
     BasePage basePage = new BasePage();
     SearchPage searchPage = new SearchPage();
-    WebDriver driver;
+
 
 
     @Given("Go to main page and verify the correct page")
@@ -67,21 +67,19 @@ public class ProductStepdefs {
         
     }
 
-    @And("Get the product price")
-    public void getTheProductPrice() {
 
-        WebElement root1 = driver.findElement(By.tagName("mer-text"));
+    @Then("Get the product price and verify it")
+    public void getTheProductPriceAndVerifyIt() {
 
-        JavascriptExecutor jsEx = (JavascriptExecutor)driver;
-        WebElement shadowRoot = (WebElement) jsEx.executeScript("return arguments[0].shadowRoot",root1);
+        WebElement firstShadowRoot = Driver.get().findElement(By.xpath("//div[@class='mer-spacing-b-12']//following-sibling::section//mer-text"));
 
-        WebElement root2 = shadowRoot.findElement(By.tagName("mer-price"));
-        WebElement price = root2.findElement(By.className("price"));
-        System.out.println("price.getText() = " + price.getText());
+        String innerHTML = firstShadowRoot.getAttribute("innerHTML");
+        String fromValue = innerHTML.substring(innerHTML.indexOf("value"));
+        String fromValStart = fromValue.substring(fromValue.indexOf("\"") + 1);
+        String valStr = fromValStart.substring(0, fromValStart.indexOf("\""));
+        System.out.println(valStr);
 
-    }
+        Assert.assertEquals("verify the cheapest price","301",valStr);
 
-    @Then("Compare the price")
-    public void compareThePrice() {
     }
 }
