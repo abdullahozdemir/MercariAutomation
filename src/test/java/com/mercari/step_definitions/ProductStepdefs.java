@@ -8,13 +8,10 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.eo.Se;
 import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Select;
 
-import java.security.Key;
-import java.util.List;
 
 public class ProductStepdefs {
 
@@ -34,9 +31,10 @@ public class ProductStepdefs {
 
     @When("click search bar")
     public void clickSearchBar() {
+
+
         basePage.typeToSearchbar.click();
         BrowserUtils.waitFor(1);
-
 
 
     }
@@ -52,8 +50,8 @@ public class ProductStepdefs {
         searchPage.productOrder.click();
 
         Select dropOrder = new Select(searchPage.productOrder);
-//        dropOrder.selectByVisibleText("score:desc");
-//        dropOrder.selectByValue("score:desc");
+//      dropOrder.selectByVisibleText("score:desc");
+//      dropOrder.selectByValue("score:desc");
         dropOrder.selectByIndex(2);
         BrowserUtils.waitFor(3);
     }
@@ -73,6 +71,7 @@ public class ProductStepdefs {
 
         WebElement firstShadowRoot = Driver.get().findElement(By.xpath("//div[@class='mer-spacing-b-12']//following-sibling::section//mer-text"));
 
+        // I get all the information and after manupilation get the only price
         String innerHTML = firstShadowRoot.getAttribute("innerHTML");
         String fromValue = innerHTML.substring(innerHTML.indexOf("value"));
         String fromValStart = fromValue.substring(fromValue.indexOf("\"") + 1);
