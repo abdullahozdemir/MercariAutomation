@@ -1,0 +1,112 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2022-02-02T15:09:43.544Z",
+        "before": [
+          {
+            "result": {
+              "duration": 4895000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.mercari.step_definitions.Hooks.setUp()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "Compare the shoes price",
+        "description": "",
+        "id": "visit-mercari-web-page;compare-the-shoes-price",
+        "after": [
+          {
+            "result": {
+              "duration": 3704000000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.mercari.step_definitions.Hooks.tearDown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 2111000000,
+              "status": "passed"
+            },
+            "line": 4,
+            "name": "Go to main page and verify the correct page",
+            "match": {
+              "location": "com.mercari.step_definitions.ProductStepdefs.goToMainPageAndVerifyTheCorrectPage()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 1583000000,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "click search bar",
+            "match": {
+              "location": "com.mercari.step_definitions.ProductStepdefs.clickSearchBar()"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 6213000000,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "type shoes and select ascending sort",
+            "match": {
+              "location": "com.mercari.step_definitions.ProductStepdefs.typeShoesAndSelectAscendingSort()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 2151000000,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "Select the first and cheapest product",
+            "match": {
+              "location": "com.mercari.step_definitions.ProductStepdefs.selectTheFirstAndCheapestProduct()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "error_message": "org.junit.ComparisonFailure: verify the cheapest price expected:\u003c30[1]\u003e but was:\u003c30[0]\u003e\r\n\tat org.junit.Assert.assertEquals(Assert.java:117)\r\n\tat com.mercari.step_definitions.ProductStepdefs.getTheProductPriceAndVerifyIt(ProductStepdefs.java:81)\r\n\tat ✽.Get the product price and verify it(file:///C:/Users/Aozdemir/IdeaProjects/MercariAutomation/src/test/resources/features/mercari.feature:8)\r\n",
+              "duration": 79000000,
+              "status": "failed"
+            },
+            "line": 8,
+            "name": "Get the product price and verify it",
+            "match": {
+              "location": "com.mercari.step_definitions.ProductStepdefs.getTheProductPriceAndVerifyIt()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "Visit Mercari web page",
+    "description": "",
+    "id": "visit-mercari-web-page",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/mercari.feature",
+    "tags": []
+  }
+]

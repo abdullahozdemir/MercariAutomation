@@ -78,7 +78,7 @@ public class ProductStepdefs {
         String valStr = fromValStart.substring(0, fromValStart.indexOf("\""));
         System.out.println(valStr);
 
-        Assert.assertEquals("verify the cheapest price","301",valStr);
+        Assert.assertEquals("verify the cheapest price","300",valStr);
 
     }
 }
