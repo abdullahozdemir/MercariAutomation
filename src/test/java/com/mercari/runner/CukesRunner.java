@@ -7,10 +7,14 @@ import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
+        plugin = {"json:target/cucumber.json",
+                "html:target/default-html-reports",
+                "rerun:target/rerun.txt"
+        },
         features = "src/test/resources/features",
         glue ="com/mercari/step_definitions",
-        dryRun = true,
-        tags = ""
+        dryRun = false,
+        tags = "@wip"
 
 )
 

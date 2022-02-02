@@ -1,5 +1,5 @@
 Feature: Visit Mercari web page
-
+  @wip
   Scenario:Compare the shoes price
     Given Go to main page and verify the correct page
     When click search bar
